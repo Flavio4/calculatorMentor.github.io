@@ -1,0 +1,56 @@
+.calculator__keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    background-color: var(--keypad-background-color);
+    color: var(--text2-color);
+    border-radius: 20px;
+    padding: 30px;
+
+    body & .del {
+        color: var(--text3-color);
+        background-color: var(--keys-background1-color);
+        box-shadow: 0px 4px 0px var(--keys-shadow1-color);
+    }
+
+    body & .reset {
+        grid-column: 1 / 3;
+        color: var(--text3-color);
+        background-color: var(--keys-background1-color);
+        box-shadow: 0 4px 0 var(--keys-shadow1-color);
+        margin: 0;
+    }
+
+    body & .equals {
+        grid-column: 3 / 5;
+        color: var(--text4-color);
+        background-color: var(--keys-background2-color);
+        box-shadow: 0 4px 0 var(--keys-shadow2-color);
+        margin: 0;
+    }
+
+    & .button {
+        position: relative;
+        text-align: center;
+        background-color: var(--keys-background3-color);
+        box-shadow: 0 4px 0 var(--keys-shadow3-color);
+        border-radius: 10px;
+        height: 64px;
+        line-height: 70px;
+        bottom: 0;
+    }
+
+    /*Cambiar luego*/
+    & .button:active {
+        box-shadow: none;
+        animation-name: push;
+        animation-duration: 100ms;
+        bottom: -5px;
+    }
+
+    @keyframes push {
+        from {bottom: 0px;} to {bottom: -5px;}
+    }
+}
