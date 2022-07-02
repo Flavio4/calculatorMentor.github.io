@@ -1,0 +1,311 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol, ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/*---------------THEME 1 VARIABLES----------------*/
+/* Theme 1 Backgrounds */
+/* Theme 1 Keys */
+/*Theme 1 Text*/
+/*---------------THEME 2 VARIABLES----------------*/
+/* Theme 2 Backgrounds */
+/* Theme 2 Keys */
+/*Theme 2 Text*/
+/*---------------THEME 3 VARIABLES----------------*/
+/* Theme 3 Keys */
+/*Theme 3 Text*/
+body.theme1 {
+  --main-background-color: hsl(222deg, 26%, 31%);
+  --keypad-background-color: hsl(223deg, 31%, 20%);
+  --screen-background-color: hsl(224deg, 36%, 15%);
+  --keys-background1-color: hsl(225deg, 21%, 49%);
+  --keys-shadow1-color: hsl(224deg, 28%, 35%);
+  --keys-background2-color: hsl(6deg, 63%, 50%);
+  --keys-shadow2-color: hsl(6deg, 70%, 34%);
+  --keys-background3-color: hsl(30deg, 25%, 89%);
+  --keys-shadow3-color: hsl(28deg, 16%, 65%);
+  --text1-color: hsl(0deg, 0%, 100%);
+  /*Calc*/
+  --text2-color: hsl(221deg, 14%, 31%);
+  /*Keypad*/
+  --text3-color: hsl(0deg, 0%, 100%);
+  /*Del, Reset*/
+  --text4-color: hsl(0deg, 0%, 100%);
+  /*Equals*/
+}
+
+body.theme2 {
+  --main-background-color: hsl(0deg, 0%, 90%);
+  --keypad-background-color: hsl(0deg, 5%, 81%);
+  --screen-background-color: hsl(0deg, 0%, 93%);
+  --keys-background1-color: hsl(185deg, 42%, 37%);
+  --keys-shadow1-color: hsl(185deg, 58%, 25%);
+  --keys-background2-color: hsl(25deg, 98%, 40%);
+  --keys-shadow2-color: hsl(25deg, 99%, 27%);
+  --keys-background3-color: hsl(45deg, 7%, 89%);
+  --keys-shadow3-color: hsl(35deg, 11%, 61%);
+  --text1-color: hsl(60deg, 10%, 19%);
+  /*Calc*/
+  --text2-color: hsl(60deg, 10%, 19%);
+  /*Keypad*/
+  --text3-color: hsl(0deg, 0%, 100%);
+  /*Del, Reset*/
+  --text4-color: hsl(0deg, 0%, 100%);
+  /*Equals*/
+}
+
+body.theme3 {
+  --main-background-color: hsl(268deg, 75%, 9%);
+  --keypad-background-color: hsl(268deg, 71%, 12%);
+  --screen-background-color: hsl(268deg, 71%, 12%);
+  --keys-background1-color: hsl(281deg, 89%, 26%);
+  --keys-shadow1-color: hsl(285deg, 91%, 52%);
+  --keys-background2-color: hsl(176deg, 100%, 44%);
+  --keys-shadow2-color: hsl(177deg, 92%, 70%);
+  --keys-background3-color: hsl(268deg, 47%, 21%);
+  --keys-shadow3-color: hsl(290deg, 70%, 36%);
+  --text1-color: hsl(52deg, 100%, 62%);
+  /*Calc*/
+  --text2-color: hsl(52deg, 100%, 62%);
+  /*Keypad*/
+  --text3-color: hsl(0deg, 0%, 100%);
+  /*Del, Reset*/
+  --text4-color: hsl(198deg, 20%, 13%);
+  /*Equals*/
+}
+
+body {
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  height: 100vh;
+  background-color: var(--main-background-color);
+}
+body .calculator {
+  font-size: 32px;
+  position: relative;
+  max-width: 535px;
+  min-height: 90%;
+  margin: 76px auto;
+  color: var(--text1-color);
+}
+body .calculator .calculator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+body .calculator .calculator__header h1 {
+  line-height: 80%;
+}
+
+.header__toggle {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-template-rows: repeat(2, auto);
+  align-items: end;
+}
+.header__toggle .title_theme {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  line-height: 80%;
+  font-size: 15px;
+  margin-right: 25px;
+}
+.header__toggle .num {
+  grid-column: 3/7;
+  grid-row: 1/2;
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 5px;
+  text-align: center;
+  letter-spacing: 7px;
+  left: 3px;
+}
+.header__toggle .toggle__button {
+  display: inline-block;
+  position: relative;
+  grid-column: 5/7;
+  grid-row: 2/3;
+  background-color: var(--keypad-background-color);
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0;
+  width: 70px;
+  height: 27px;
+}
+.header__toggle .toggle__button .toggle__icon {
+  display: inline-block;
+  position: relative;
+  width: 25%;
+  height: 70%;
+  background-color: var(--keys-background2-color);
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.header__toggle .toggle__button .toggle__icon.theme2 {
+  left: 20px;
+}
+.header__toggle .toggle__button .toggle__icon.theme3 {
+  left: 40px;
+}
+
+.calculator__screen {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  min-height: 128px;
+  background-color: var(--screen-background-color);
+  border-radius: 10px;
+  margin: 32px 0;
+}
+.calculator__screen .screen__text {
+  text-align: right;
+  flex-grow: 1;
+  line-height: 100px;
+  padding: 0 35px;
+  font-size: 40px;
+}
+.calculator__screen .screen__text2 {
+  text-align: right;
+  padding: 9px 35px 0 35px;
+  font-size: 20px;
+  color: grey;
+}
+
+.calculator__keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  background-color: var(--keypad-background-color);
+  color: var(--text2-color);
+  border-radius: 20px;
+  padding: 30px;
+  /*Cambiar luego*/
+}
+body .calculator__keys .del {
+  color: var(--text3-color);
+  background-color: var(--keys-background1-color);
+  box-shadow: 0px 4px 0px var(--keys-shadow1-color);
+}
+body .calculator__keys .reset {
+  grid-column: 1/3;
+  color: var(--text3-color);
+  background-color: var(--keys-background1-color);
+  box-shadow: 0 4px 0 var(--keys-shadow1-color);
+  margin: 0;
+}
+body .calculator__keys .equals {
+  grid-column: 3/5;
+  color: var(--text4-color);
+  background-color: var(--keys-background2-color);
+  box-shadow: 0 4px 0 var(--keys-shadow2-color);
+  margin: 0;
+}
+.calculator__keys .button {
+  position: relative;
+  text-align: center;
+  background-color: var(--keys-background3-color);
+  box-shadow: 0 4px 0 var(--keys-shadow3-color);
+  border-radius: 10px;
+  height: 64px;
+  line-height: 70px;
+  bottom: 0;
+}
+.calculator__keys .button:active {
+  box-shadow: none;
+  -webkit-animation-name: push;
+          animation-name: push;
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms;
+  bottom: -5px;
+}
+@-webkit-keyframes push {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: -5px;
+  }
+}
+@keyframes push {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: -5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body .calculator {
+    margin: auto;
+  }
+  body .calculator .calculator__header {
+    margin: 25px;
+  }
+  body .calculator .calculator__screen {
+    min-height: 88px;
+  }
+  body .calculator .calculator__keys {
+    gap: 13px;
+    padding: 24px;
+    border-radius: 10px;
+  }
+  body .calculator .calculator__keys .button {
+    height: 60px;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 375px) {
+  body .calculator {
+    margin: 30px 25px;
+  }
+  body .calculator .calculator__header {
+    margin: 0;
+  }
+  body .calculator .calculator__screen {
+    min-height: 88px;
+  }
+  body .calculator .calculator__keys {
+    gap: 13px;
+    padding: 24px;
+    border-radius: 10px;
+  }
+  body .calculator .calculator__keys .button {
+    height: 60px;
+    border-radius: 5px;
+  }
+}/*# sourceMappingURL=style.css.map */

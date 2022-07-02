@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Public+Sans:wght@300&display=swap" rel="stylesheet">
+  <title>Calculator app / Frontend Mentor</title>
+  <link rel="stylesheet" type="text/css" href="app/scss/style.css">
+</head>
+
+<body class="body theme1">
+
+  <div class="calculator">
+    <div class="calculator__header">
+      <h1>
+        calc
+      </h1>
+      
+      <div class="header__toggle">
+        <p class="title_theme">THEME</p>
+        <p class="num">1 2 3</p>
+        <div class="toggle__button">
+          <div class="toggle__icon theme1"></div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="calculator__screen">
+      <p class="screen__text2"></p>
+      <p class="screen__text"></p>
+    </div>
+
+    <div class="calculator__keys">
+      <p class="button" onclick="numButtons(7)">7</p>
+      <p class="button" onclick="numButtons(8)">8</p>
+      <p class="button" onclick="numButtons(9)">9</p>
+      <p class="button del" onclick="delButton()">DEL</p>
+      <p class="button" onclick="numButtons(4)">4</p>
+      <p class="button" onclick="numButtons(5)">5</p>
+      <p class="button" onclick="numButtons(6)">6</p>
+      <p class="button" onclick="operationButton('+')">+</p>
+      <p class="button" onclick="numButtons(1)">1</p>
+      <p class="button" onclick="numButtons(2)">2</p>
+      <p class="button" onclick="numButtons(3)">3</p>
+      <p class="button" onclick="operationButton('-')">-</p>
+      <p class="button" onclick="numPointer()">.</p>
+      <p class="button" onclick="numButtons(0)">0</p>
+      <p class="button" onclick="operationButton('/')">/</p>
+      <p class="button" onclick="operationButton('*')">x</p>
+      <p class="button reset" onclick="resetButton()">RESET</p>
+      <p class="button equals" onclick="equalsButton(document.querySelector('.screen__text2').innerHTML, document.querySelector('.screen__text').innerHTML)">=</p>
+
+    </div>
+
+  </div>  
+
+  
+
+
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Flavio Ortigoza</a>. 
+  </div>-->
+  <script src="app/js/script.js"></script>
+</body>
+</html>
